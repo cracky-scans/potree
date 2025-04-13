@@ -12,7 +12,7 @@ fn main() {
     run_command("npm", &["install"], "potree");
 
     // Copy files to asset dir
-    fs::remove_dir_all("built_assets").expect("unable to remove previous assets");
+    let _res = fs::remove_dir_all("built_assets");
     copy_dir_all("potree/build", "built_assets/build");
     copy_dir_all("potree/libs", "built_assets/libs");
 }
